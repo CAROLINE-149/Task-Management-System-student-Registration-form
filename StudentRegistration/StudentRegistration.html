@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link href="studentRegistration.css" rel="stylesheet">
+</head>
+<body>
+
+ <div class="container">
+    <div class="left">
+        <h1>Welcome!</h1>
+        <h6>Register to begin your learning journey.</h6>
+        <p>Sign up to access your courses, track your progress and stay connected with your academic goals. </p>
+        <button class="learn-btn">Learn More</button>
+    </div>
+
+    <div class="right">
+    <div class="card">
+    <form id="registrationForm">
+        <h2>Student Registration</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" maxlength="50" placeholder="Enter full Name" required>
+        <div id="nameHelper" class="helper"></div>
+        <div id="nameError" class="error"></div>
+        <div id="nameCounter" class="counter">0/50</div>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+        <div id="emailHelper" class="helper"></div>
+        <div id="emailError" class="error"></div>
+        <br><br>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" placeholder="Enter your course of study" required>
+        <div id="courseHelper" class="helper"></div>
+        <div id="courseError" class="error"></div>
+        <br><br>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Register</button>
+    </form>
+
+    <div id="successMessage" class="success-message"></div>
+    </div>
+ </div>
+
+</div>
+
+    </body>
+
+
+
+    <script src="StudentRegistration.js"></script>
+    
+</body>
+</html>

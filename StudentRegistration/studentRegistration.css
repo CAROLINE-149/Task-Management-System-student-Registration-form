@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f1c2e, #081427);
+}
+.container{
+    width: 90%;
+    height: 85vh;
+    margin: auto;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    
+}
+
+.left{
+    flex: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    width: 50%;
+}
+.left h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.left h6{
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #cbd5e1;
+}
+
+.left p{
+    width: 80%;
+    font-size: 12px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+.learn-btn{
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff512f, #f09819);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 150px;
+}
+.learn-btn:hover{
+    background: linear-gradient(45deg, #f09819, #ff512f);
+    transform: scale(1.05);
+}
+
+.right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 350px;
+    height: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    color: white;
+    margin-right: 90px;
+}
+.card h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    color:#ff512f;
+    text-align: center;
+}
+
+.card label{
+    font-size: 14px;
+}
+
+.card input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+}
+
+.submit-btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff512f, #f09819);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover{
+    background: linear-gradient(45deg, #f09819, #ff512f);
+    transform: scale(1.05);
+}
+
