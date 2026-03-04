@@ -6,6 +6,7 @@
 }
 
 body {
+    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -72,9 +73,11 @@ body {
 }
 
 .card{
-    width: 350px;
+    width: 380px;
     height: 400px;
-    padding: 40px;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px);
     border-radius: 20px;
@@ -119,4 +122,82 @@ body {
     background: linear-gradient(45deg, #f09819, #ff512f);
     transform: scale(1.05);
 }
+.counter {
+    font-size: 12px;
+    color: #cbd5e1;
+    align-self: flex-end;
+    margin-top: 4px;
+}
 
+/* Responsive Design */
+/*large laptop adjustment*/
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .left, .right {
+        width: 100%;
+        padding: 40px;
+    }
+    .card {
+        margin-right: 0;
+    }
+}
+
+/*tablet adjustment*/
+@media (max-width: 992px) {
+    .left h1 {
+        font-size: 40px;
+    }
+    .card {
+        width: 100%;
+    }
+}
+/*small tablet/large phone adjustment*/
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+    .left{
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+    .left h1{
+        font-size: 2rem;
+    }
+    .learn-btn{
+        width: 100%;
+        max-width: 250px;
+    }
+    .right{
+        padding: 30px 20px;
+    }
+    .card{
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/*small phone adjustment*/
+@media (max-width: 480px) {
+    .left{
+        padding: 30px 15px;
+    }
+    .left h1{
+        font-size: 1.6rem;
+    }
+    .left p{
+        font-size: 0.9rem;
+    }
+    .card{
+        padding: 20px;
+    }
+    form input{
+        padding: 10px;
+    }
+    .submit-btn{
+        padding: 12px;
+    }
+}

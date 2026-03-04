@@ -41,7 +41,7 @@ registerButton.addEventListener('mouseover', function(){
 registerButton.addEventListener('mouseout', function(){
 
     //return to original color
-    registerButton.style.backgroundColor = 'white';
+    registerButton.style.backgroundColor = 'background: rgba(255, 255, 255, 0.15);';
 
     //return to original size
     registerButton.style.transform = 'scale(1)';
@@ -72,7 +72,8 @@ fullNameInput.addEventListener('focus', function(){
     fullNameInput.style.outline = 'none';
 
     nameHelper.textContent = 'Enter your full name (minimum 3 characters)';
-    nameHelper.style.color = 'blue';
+    nameHelper.style.color = '#f09819';
+    nameHelper.style.fontSize = '12px';
 });
 
 //Email - focus
@@ -82,7 +83,8 @@ emailInput.addEventListener('focus', function(){
     emailInput.style.outline = 'none'; 
 
     emailHelper.textContent = 'Enter a valid email address (e.g., user@example.com)';
-    emailHelper.style.color = 'blue';
+    emailHelper.style.color = '#f09819';
+    emailHelper.style.fontSize = '12px';
 });
 
 //Course - focus
@@ -92,24 +94,31 @@ courseInput.addEventListener('focus', function(){
     courseInput.style.outline = 'none'; 
 
     courseHelper.textContent = 'Enter your course of study (e.g., Computer Science)';
-    courseHelper.style.color = 'blue';
+    courseHelper.style.color = '#f09819';
+    courseHelper.style.fontSize = '12px';
 });
 
 //Add blur event listener to the input fields
 
 //Full Name - blur
 fullNameInput.addEventListener('blur', function(){
-    fullNameInput.style.border = '1px solid black';//reset border
+    fullNameInput.style.border = 'none';//reset border
     nameHelper.textContent = '';//clear helper
 
     if(fullNameInput.value.trim()=== ''){
         fullNameInput.classList.add('error');
         fullNameInput.classList.remove('valid');
         nameError.textContent = 'Full name is required';
+        nameError.style.color = 'red';
+        nameError.style.fontSize = '12px';
+
     }else if(fullNameInput.value.trim().length < 3){
         fullNameInput.classList.add('error');
         fullNameInput.classList.remove('valid');
         nameError.textContent = 'Full name must be at least 3 characters';
+        nameError.style.color = 'red';
+        nameError.style.fontSize = '12px';
+
     }else{
         fullNameInput.classList.remove('error');
         fullNameInput.classList.add('valid');
@@ -120,7 +129,7 @@ fullNameInput.addEventListener('blur', function(){
 
 //Email -blur
 emailInput.addEventListener('blur', function(){
-    emailInput.style.border = '1px solid black';
+    emailInput.style.border = 'none';
     emailHelper.textContent = '';
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -130,10 +139,16 @@ emailInput.addEventListener('blur', function(){
         emailInput.classList.add('error');
         emailInput.classList.remove('valid');
         emailError.textContent = 'Email is required';
+        emailError.style.color = 'red';
+        emailError.style.fontSize = '12px';
+
     }else if(!emailPattern.test(emailValue)){
         emailInput.classList.add('error');
         emailInput.classList.remove('valid');
         emailError.textContent = 'Please enter a valid Email';
+        emailError.style.color = 'red';
+        emailError.style.fontSize = '12px';
+        
     }else{
         emailInput.classList.remove('error');
         emailInput.classList.add('valid');
@@ -143,13 +158,16 @@ emailInput.addEventListener('blur', function(){
 
 //Course - blur
 courseInput.addEventListener('blur', function(){
-    courseInput.style.border = '1px solid black';
+    courseInput.style.border = 'none';
     courseHelper.textContent = '';
 
     if(courseInput.value.trim() === ''){
         courseInput.classList.add('error');
         courseInput.classList.remove('valid');
         courseError.textContent = 'Course of study is required';
+        courseError.style.color = 'red';
+        courseError.style.fontSize = '12px';
+
     }else{
         courseInput.classList.remove('error');
         courseInput.classList.add('valid');
@@ -221,11 +239,11 @@ form.addEventListener('submit', function(e){
             successMessage.classList.remove('show');
             registerButton.textContent = 'Register';
             registerButton.classList.remove('success','processing');
-            registerButton.style.background = 'white';
+            registerButton.style.background = '';
 
         //reset character counter
         nameCounter.textContent = '0/50';
-        nameCounter.style.color = 'green';
+        nameCounter.style.color = 'white';
 
         //remove validation classes
         [fullNameInput, emailInput, courseInput].forEach(input => {
